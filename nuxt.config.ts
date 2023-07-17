@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    'vuetify/lib/styles/main.sass',
+    '@mdi/font/css/materialdesignicons.min.css'
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -8,5 +12,11 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['nuxt-icon']
+  modules: [
+      'nuxt-icon',
+      '@pinia/nuxt'
+    ],
+    build:{
+      transpile: ['vuetify']
+    }
 })
